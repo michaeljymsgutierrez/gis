@@ -2,20 +2,23 @@ angular.module('userServices', [])
 
 .factory('User', function($http) {
     var userFactory = {}; // Create the userFactory object
-
+    var host = "http://127.0.0.1:3000";
     // Register users in database
     userFactory.create = function(regData) {
-        return $http.post('/api/users', regData);
+        var url = host + '/api/users';
+        return $http.post(url, regData);
     };
 
     // Check if username is available at registration
     userFactory.checkUsername = function(regData) {
-        return $http.post('/api/checkusername', regData);
+        var url = host + '/api/checkusername';
+        return $http.post(url, regData);
     };
 
     // Check if e-mail is available at registration
     userFactory.checkEmail = function(regData) {
-        return $http.post('/api/checkemail', regData);
+        var url = host + '/api/checkemail';
+        return $http.post(url, regData);
     };
 
     // Activate user account with e-mail link
