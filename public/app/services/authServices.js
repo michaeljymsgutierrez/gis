@@ -3,10 +3,11 @@ angular.module('authServices', [])
 // Factor: Auth handles all login/logout functions	
 .factory('Auth', function($http, AuthToken) {
     var authFactory = {}; // Create the factory object
-
+    var host = "http://127.0.0.1:3000";
     // Function to log the user in
     authFactory.login = function(loginData) {
-        return $http.post('/api/authenticate', loginData).then(function(data) {
+        var url = host + '/api/authenticate';
+        return $http.post(url, loginData).then(function(data) {
             AuthToken.setToken(data.data.token); // Endpoint will return a token to set
             return data;
         });
@@ -31,7 +32,8 @@ angular.module('authServices', [])
     authFactory.getUser = function() {
         // Check first if user has a token
         if (AuthToken.getToken()) {
-            return $http.post('/api/me'); // Return user's data
+            var url = host + '/api/me';
+            return $http.post(url); // Return user's data
         } else {
             $q.reject({ message: 'User has no token' }); // Reject if no token exists
         }
