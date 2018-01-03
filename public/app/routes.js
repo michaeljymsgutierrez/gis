@@ -87,7 +87,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: Edit a User
     .when('/edit/:id', {
-        templateUrl: 'app/views/pages/management/edit.html',
+        templateUrl: 'views/pages/management/edit.html',
         controller: 'editCtrl',
         controllerAs: 'edit',
         authenticated: true,

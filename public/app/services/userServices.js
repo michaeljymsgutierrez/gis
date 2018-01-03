@@ -77,17 +77,23 @@ angular.module('userServices', [])
 
     // Get user to then edit
     userFactory.getUser = function(id) {
-        return $http.get('/api/edit/' + id);
+        var host = "http://127.0.0.1:3000";
+        var url = host + '/api/edit/';
+        return $http.get(url + id);
     };
 
     // Delete a user
     userFactory.deleteUser = function(username) {
-        return $http.delete('/api/management/' + username);
+        var host = "http://127.0.0.1:3000";
+        var url = host + '/api/management/';
+        return $http.delete(url + username);
     };
 
     // Edit a user
     userFactory.editUser = function(id) {
-        return $http.put('/api/edit', id);
+        var host = "http://127.0.0.1:3000";
+        var url = host + '/api/edit';
+        return $http.put(url, id);
     };
 
     return userFactory; // Return userFactory object
