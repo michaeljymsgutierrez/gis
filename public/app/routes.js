@@ -78,7 +78,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: Manage User Accounts
     .when('/management', {
-        templateUrl: 'app/views/pages/management/management.html',
+        templateUrl: 'views/pages/management/management.html',
         controller: 'managementCtrl',
         controllerAs: 'management',
         authenticated: true,
