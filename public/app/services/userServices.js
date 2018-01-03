@@ -70,7 +70,9 @@ angular.module('userServices', [])
 
     // Get all the users from database
     userFactory.getUsers = function() {
-        return $http.get('/api/management/');
+        var host = "http://127.0.0.1:3000";
+        var url = host + '/api/management/';
+        return $http.get(url);
     };
 
     // Get user to then edit
