@@ -96,7 +96,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: Search Database Users
     .when('/search', {
-        templateUrl: 'app/views/pages/management/search.html',
+        templateUrl: 'views/pages/management/search.html',
         controller: 'managementCtrl',
         controllerAs: 'management',
         authenticated: true,
