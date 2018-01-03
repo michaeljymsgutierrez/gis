@@ -32,7 +32,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: User Profile
     .when('/profile', {
-        templateUrl: 'app/views/pages/users/profile.html',
+        templateUrl: 'views/pages/users/profile.html',
         authenticated: true
     })
 
@@ -104,7 +104,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
     })
 
     .when('/map', {
-        templateUrl: 'app/views/pages/map/map.html'
+        templateUrl: 'views/pages/map/map.html'
     })
 
     .otherwise({ redirectTo: '/' }); // If user tries to access any other route, redirect to home page
