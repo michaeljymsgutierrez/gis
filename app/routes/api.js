@@ -374,20 +374,19 @@ module.exports = function(router) {
         var token = req.body.token || req.body.query || req.headers['x-access-token']; // Check for token in body, URL, or headers
 
         // Check if token is valid and not expired  
-        // if (token) {
-        //     // Function to verify token
-        //     jwt.verify(token, secret, function(err, decoded) {
-        //         if (err) {
-        //             res.json({ success: false, message: 'Token invalid' }); // Token has expired or is invalid
-        //         } else {
-        //             req.decoded = decoded; // Assign to req. variable to be able to use it in next() route ('/me' route)
-        //             next(); // Required to leave middleware
-        //         }
-        //     });
-        // } else {
-        //     res.json({ success: false, message: 'No token provided' }); // Return error if no token was provided in the request
-        // }
-        next();
+        if (token) {
+            // Function to verify token
+            jwt.verify(token, secret, function(err, decoded) {
+                if (err) {
+                    res.json({ success: false, message: 'Token invalid' }); // Token has expired or is invalid
+                } else {
+                    req.decoded = decoded; // Assign to req. variable to be able to use it in next() route ('/me' route)
+                    next(); // Required to leave middleware
+                }
+            });
+        } else {
+            res.json({ success: false, message: 'No token provided' }); // Return error if no token was provided in the request
+        }
     });
 
     // Route to get the currently logged in user    
