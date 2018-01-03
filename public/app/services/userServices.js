@@ -63,7 +63,9 @@ angular.module('userServices', [])
 
     // Get the current user's permission
     userFactory.getPermission = function() {
-        return $http.get('/api/permission/');
+        var host = "http://127.0.0.1:3000";
+        var url = host + '/api/permission/';
+        return $http.get(url);
     };
 
     // Get all the users from database
