@@ -102,8 +102,7 @@
                 <a ng-show="!main.isLoggedIn" href="/login" class="page-scroll btn btn-xl">View Map</a>
                 <a ng-show="!main.isLoggedIn" href="/register" class="page-scroll btn twitterbtn">Register</a>
                 <a ng-show="main.isLoggedIn" href="/map" class="page-scroll btn btn-xl">Map</a>
-                <a ng-show="main.isLoggedIn && main.authorized" href="/management" class="page-scroll btn facebookbtn">Receive Alert</a>
-
+                <a ng-show="main.isLoggedIn && main.authorized" href="/receiveAlert" class="page-scroll btn facebookbtn">Receive Alert</a>
             </div>
         </div>
     </header>
@@ -150,8 +149,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyDgs-eh1r71XOutOif5ckR8tqOfGa8eplQ&libraries=places&callback=initMap"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyDgs-eh1r71XOutOif5ckR8tqOfGa8eplQ&libraries=places&callback=initMap" async defer></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
 
