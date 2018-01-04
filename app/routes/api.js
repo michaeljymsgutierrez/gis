@@ -1,4 +1,5 @@
 var User = require('../models/user'); // Import User Model
+var Disease = require('../models/disease');
 var jwt = require('jsonwebtoken'); // Import JWT Package
 var secret = 'harrypotter'; // Create custom secret for use in JWT
 var nodemailer = require('nodemailer'); // Import Nodemailer Package
@@ -464,6 +465,7 @@ module.exports = function(router) {
         });
     });
 
+
     // Route to get the user that needs to be edited
     router.get('/edit/:id', function(req, res) {
         var editUser = req.params.id; // Assign the _id from parameters to variable
@@ -678,6 +680,20 @@ module.exports = function(router) {
                 }
             }
         });
+    });
+
+    /*
+        Disease API by CG
+    */
+    router.post('/disease', function(req, res) {
+        var addItem = req.body;
+        Disease.addDisease(addItem, function(err, data) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(data);
+            }
+        })
     });
 
     return router; // Return the router object to server

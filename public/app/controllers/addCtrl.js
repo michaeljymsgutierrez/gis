@@ -1,6 +1,6 @@
 // Creates the addCtrl Module and Controller. Note that it depends on 'geolocation' and 'gservice' modules.
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
-addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice){
+addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
 
     // Initializes Variables
     // ----------------------------------------------------------------------------
@@ -13,10 +13,10 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     $scope.formData.latitude = 121.1644;
 
     // Get User's actual coordinates based on HTML5 at window load
-    geolocation.getLocation().then(function(data){
+    geolocation.getLocation().then(function(data) {
 
         // Set the latitude and longitude equal to the HTML5 coordinates
-        coords = {lat:data.coords.latitude, long:data.coords.longitude};
+        coords = { lat: data.coords.latitude, long: data.coords.longitude };
 
         // Display coordinates in location textboxes rounded to three decimal points
         $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
@@ -33,10 +33,10 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     // ----------------------------------------------------------------------------
 
     // Get coordinates based on mouse click. When a click event is detected....
-    $rootScope.$on("clicked", function(){
+    $rootScope.$on("clicked", function() {
 
         // Run the gservice functions associated with identifying coordinates
-        $scope.$apply(function(){
+        $scope.$apply(function() {
             $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
             $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
             // $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
@@ -44,9 +44,9 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     });
 
     // Function for refreshing the HTML5 verified location (used by refresh button)
-    $scope.refreshLoc = function(){
-        geolocation.getLocation().then(function(data){
-            coords = {lat:data.coords.latitude, long:data.coords.longitude};
+    $scope.refreshLoc = function() {
+        geolocation.getLocation().then(function(data) {
+            coords = { lat: data.coords.latitude, long: data.coords.longitude };
 
             $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
             $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
@@ -67,9 +67,11 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
             location: [$scope.formData.longitude, $scope.formData.latitude]
         };
 
+        var host = "http://127.0.0.1:3000";
+        var url = host + "/api/disease";
         // Saves the user data to the db
-        $http.post('/users', userData)
-            .success(function (data) {
+        $http.post(url, userData)
+            .success(function(data) {
 
                 // Once complete, clear the form (except location)
                 $scope.formData.poultryname = "";
@@ -80,9 +82,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 // Refresh the map with new data
                 gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
             })
-            .error(function (data) {
+            .error(function(data) {
                 console.log('Error: ' + data);
             });
     };
 });
-
