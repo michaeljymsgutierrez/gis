@@ -108,7 +108,8 @@ var app = angular.module('appRoutes', ['ngRoute'])
     })
 
     .when('/receiveAlert', {
-        templateUrl: 'views/pages/map/addForm.html'
+        templateUrl: 'views/pages/map/addForm.html',
+        controller: 'addCtrl'
     })
 
     .otherwise({ redirectTo: '/' }); // If user tries to access any other route, redirect to home page
