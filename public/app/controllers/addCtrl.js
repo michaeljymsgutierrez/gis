@@ -9,8 +9,14 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var lat = 0;
     var long = 0;
 
-    $scope.formData.longitude = 13.9419;
-    $scope.formData.latitude = 121.1644;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var mysrclat = position.coords.latitude;
+            var mysrclong = position.coords.longitude;
+            $scope.formData.longitude = mysrclong;
+            $scope.formData.latitude = mysrclat;
+        });
+    }
 
     // Get User's actual coordinates based on HTML5 at window load
     geolocation.getLocation().then(function(data) {
@@ -19,8 +25,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         coords = { lat: data.coords.latitude, long: data.coords.longitude };
 
         // Display coordinates in location textboxes rounded to three decimal points
-        $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-        $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+        $scope.formData.longitude = coords.long;
+        $scope.formData.latitude = coords.lat;
 
         // Display message confirming that the coordinates verified.
         // $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
@@ -48,8 +54,8 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
         geolocation.getLocation().then(function(data) {
             coords = { lat: data.coords.latitude, long: data.coords.longitude };
 
-            $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
-            $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+            $scope.formData.longitude = coords.long;
+            $scope.formData.latitude = coords.lat;
             // $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
             gservice.refresh(coords.lat, coords.long);
         });
