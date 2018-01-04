@@ -696,5 +696,15 @@ module.exports = function(router) {
         })
     });
 
+    router.get('/disease/all', function(req, res) {
+        Disease.getAllDisease(function(err, data) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(data);
+            }
+        });
+    });
+
     return router; // Return the router object to server
 };
