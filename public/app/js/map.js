@@ -3,6 +3,7 @@ function initMap() {
         navigator.geolocation.getCurrentPosition(function(position) {
             curLat = position.coords.latitude;
             curLong = position.coords.longitude;
+            console.log(curLat + " " + curLong);
         });
     }
 
