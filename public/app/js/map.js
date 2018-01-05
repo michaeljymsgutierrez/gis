@@ -29,8 +29,6 @@ function initMap() {
                     toPush[3] = key + 1;
                     locations.push(toPush);
                 });
-
-                console.log(curLat + "-" + curLong);
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 10,
                     center: new google.maps.LatLng(curLat, curLong),
