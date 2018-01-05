@@ -73,7 +73,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
             location: [$scope.formData.longitude, $scope.formData.latitude]
         };
 
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + "/api/disease";
         // Saves the user data to the db
         $http.post(url, userData)
