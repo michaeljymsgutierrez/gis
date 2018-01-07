@@ -717,5 +717,51 @@ module.exports = function(router) {
         });
     });
 
+    router.get('/disease/summary', function(req, res) {
+        Disease.getAllDisease(function(err, data) {
+            if (err) {
+                res.json(err);
+            } else {
+                var ds = data;
+                var counts = {
+                    d1: 0,
+                    d2: 0,
+                    d3: 0,
+                    d4: 0,
+                    d5: 0,
+                    d6: 0,
+                    d7: 0,
+                    d8: 0,
+                    d9: 0
+                };
+                ds.forEach(function(val) {
+                    console.log(val);
+                    var items = ["New Castle Disease", "Infectious laryngotracheitis (ILT)", "Infectious bursal disease, IBD", "Infectious bronchitis", "Mycoplasma gallisepticum", "Infectious coryza", "Coccidiosis", "Marek’s Disease", "Fowl cholera"];
+                    if (val.disease == items[0]) {
+                        counts.d1++;
+                    } else if (val.disease == items[1]) {
+                        counts.d2++;
+                    } else if (val.disease == items[2]) {
+                        counts.d3++;
+                    } else if (val.disease == items[3]) {
+                        counts.d4++;
+                    } else if (val.disease == items[4]) {
+                        counts.d5++;
+                    } else if (val.disease == items[5]) {
+                        counts.d6++;
+                    } else if (val.disease == items[6]) {
+                        counts.d7++;
+                    } else if (val.disease == items[7]) {
+                        counts.d8++;
+                    } else if (val.disease == items[8]) {
+                        counts.d9++;
+                    }
+                });
+                counts.total = counts.d1 + counts.d2 + counts.d3 + counts.d4 + counts.d5 + counts.d6 + counts.d7 + counts.d8 + counts.d9;
+                res.json(counts);
+            }
+        });
+    });
+
     return router; // Return the router object to server
 };
