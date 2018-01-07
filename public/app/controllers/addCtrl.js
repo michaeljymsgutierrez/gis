@@ -3,8 +3,25 @@ var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
 
     $scope.labels = ["New Castle Disease", "Infectious laryngotracheitis (ILT)", "Infectious bursal disease, IBD", "Infectious bronchitis", "Mycoplasma gallisepticum", "Infectious coryza", "Coccidiosis", "Marek’s Disease", "Fowl cholera"];
-    $scope.data = [100, 100, 100, 40, 120, 100, 100, 100, 100];
+    $scope.data = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+    var url = "http://127.0.0.1:3000/api/disease/summary";
+    $http.get(url, {
+        headers: { "x-access-token": window.localStorage.getItem('token') }
+    }).then(function(res) {
+        var summaryCount = res.data;
+        $scope.data[0] = ((summaryCount.d1 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[1] = ((summaryCount.d2 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[2] = ((summaryCount.d3 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[3] = ((summaryCount.d4 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[4] = ((summaryCount.d5 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[5] = ((summaryCount.d6 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[6] = ((summaryCount.d7 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[7] = ((summaryCount.d8 / summaryCount.total) * 100).toFixed(2);
+        $scope.data[8] = ((summaryCount.d9 / summaryCount.total) * 100).toFixed(2);
+    }, function(err) {
+        console.log(err);
+    });
     // Initializes Variables
     // ----------------------------------------------------------------------------
     $scope.formData = {};
