@@ -997,3 +997,7 @@ END: LOADING ICON FOR LOGGING OUT USER
     background-color: #fff;
     width: 300px;
 }
+
+.title-filter {
+    font-weight: bold;
+}
