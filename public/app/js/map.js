@@ -25,6 +25,7 @@ function initMap() {
                     var toPush = [];
                     toPush[0] = "<b>Poultry Name: </b> " + disease.poultryname + "<br/>" +
                         "<b>Poultry Address: </b>" + disease.poultryaddress + "<br/>" +
+                        "<b>Poultry Owner: </b>" + disease.poultryowner + "<br/>" +
                         "<b>Disease: </b>" + disease.disease;
                     toPush[1] = JSON.parse(disease.location[1]);
                     toPush[2] = JSON.parse(disease.location[0]);
@@ -86,6 +87,7 @@ function initMap() {
                                 var toPush = [];
                                 toPush[0] = "<b>Poultry Name: </b> " + disease.poultryname + "<br/>" +
                                     "<b>Poultry Address: </b>" + disease.poultryaddress + "<br/>" +
+                                    "<b>Poultry Owner: </b>" + disease.poultryowner + "<br/>" +
                                     "<b>Disease: </b>" + disease.disease;
                                 toPush[1] = JSON.parse(disease.location[1]);
                                 toPush[2] = JSON.parse(disease.location[0]);
