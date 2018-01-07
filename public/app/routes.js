@@ -104,7 +104,8 @@ var app = angular.module('appRoutes', ['ngRoute'])
     })
 
     .when('/map', {
-        templateUrl: 'views/pages/map/map.html'
+        templateUrl: 'views/pages/map/map.html',
+        controller: 'addCtrl'
     })
 
     .when('/receiveAlert', {

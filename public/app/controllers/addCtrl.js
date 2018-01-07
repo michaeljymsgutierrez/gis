@@ -2,6 +2,9 @@
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
 
+    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
+    $scope.data = [300, 500, 100, 40, 120];
+
     // Initializes Variables
     // ----------------------------------------------------------------------------
     $scope.formData = {};
