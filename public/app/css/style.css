@@ -991,3 +991,9 @@ END: LOADING ICON FOR LOGGING OUT USER
 .showmore {
     display: inline;
 }
+
+.disease-filter {
+    border: none;
+    background-color: #fff;
+    width: 300px;
+}
