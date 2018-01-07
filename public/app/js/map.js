@@ -9,7 +9,7 @@ function initMap() {
 
     function reInit() {
         $.ajax({
-            url: "http://172.104.161.220:3000/api/disease/all",
+            url: "http://127.0.0.1:3000/api/disease/all",
             method: "GET",
             headers: {
                 "x-access-token": window.localStorage.getItem('token')
