@@ -706,5 +706,16 @@ module.exports = function(router) {
         });
     });
 
+    router.post('/disease/query', function(req, res) {
+        var id = req.body;
+        Disease.getDisease(id, function(err, data) {
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(data);
+            }
+        });
+    });
+
     return router; // Return the router object to server
 };
