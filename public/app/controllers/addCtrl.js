@@ -2,8 +2,8 @@
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
 
-    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales", "Tele Sales", "Corporate Sales"];
-    $scope.data = [300, 500, 100, 40, 120];
+    $scope.labels = ["New Castle Disease", "Infectious laryngotracheitis (ILT)", "Infectious bursal disease, IBD", "Infectious bronchitis", "Mycoplasma gallisepticum", "Infectious coryza", "Coccidiosis", "Marek’s Disease", "Fowl cholera"];
+    $scope.data = [100, 100, 100, 40, 120, 100, 100, 100, 100];
 
     // Initializes Variables
     // ----------------------------------------------------------------------------
