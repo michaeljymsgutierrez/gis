@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Google Maps API -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrn605l7RPadiwdzsOlRw9O28lxfYBJ6s"></script> -->
     <!-- Main Angular Files -->
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
@@ -55,7 +53,6 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="/">Animal Surveillance</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -82,12 +79,10 @@
                     </li>
                 </ul>
             </div>
-
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <!-- Header -->
     <header ng-show="main.home">
         <div class="container">
@@ -101,22 +96,17 @@
             </div>
         </div>
     </header>
-
     <section id="services">
         <div class="container">
             <div class="row">
-
                 <!-- Angular View -->
                 <div ng-view></div>
-                <!-- Angular View -->
-
             </div>
         </div>
     </section>
     <!-- BootstrapJS Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -139,15 +129,14 @@
         </div>
     </div>
     <!-- BootstrapJS Modal -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+    <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyDgs-eh1r71XOutOif5ckR8tqOfGa8eplQ&libraries=places&callback=initMap" async defer></script>
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.geocomplete.min.js"></script>
     <script src="js/bootstrap.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
