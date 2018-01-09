@@ -1004,11 +1004,11 @@ END: LOADING ICON FOR LOGGING OUT USER
 
 #map {
     width: 600px !important;
-    height: 523px !important;
+    height: 600px !important;
     border: 1px solid lightgray;
     border-radius: 3px;
 }
 
 .pchart {
-    height: 400px;
+    height: 300px;
 }

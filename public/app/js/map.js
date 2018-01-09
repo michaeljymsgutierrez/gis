@@ -68,8 +68,8 @@ function initMap() {
             if (elem) {
                 clearInterval(reInitInterval);
                 reInit();
-                $('.disease-filter').on('change', function() {
-                    var ds = $('.disease-filter :selected').text();
+                $('input[name=disease]').on('change', function() {
+                    var ds = $(this).val();
                     var postdata = { disease: ds };
                     $.ajax({
                         url: "http://127.0.0.1:3000/api/disease/query",
