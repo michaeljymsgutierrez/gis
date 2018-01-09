@@ -1,6 +1,12 @@
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
-
+    
+    $scope.options = {
+        legend: {
+          display: true,
+          position: 'left'
+        }
+    };
     $scope.labels = ["New Castle Disease", "Infectious laryngotracheitis (ILT)", "Infectious bursal disease, IBD", "Infectious bronchitis", "Mycoplasma gallisepticum", "Infectious coryza", "Coccidiosis", "Marek’s Disease", "Fowl cholera"];
     $scope.data = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
