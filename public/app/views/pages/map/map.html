@@ -1,9 +1,10 @@
 <!-- Google Map -->
-<div class="col-md-4 menu">
-    <div class="list-group">
-        <div class="list-group-item title-filter">Filter by Disease</div>
-        <div class="list-group-item">
-            <select class="disease-filter">
+<div class="container">
+    <div class="col-md-4 menu">
+        <div class="list-group">
+            <div class="list-group-item title-filter">Filter by Disease</div>
+            <div class="list-group-item">
+                <select class="disease-filter">
                 <option value="">Select Disease</option>
                 <option value="New Castle Disease">New Castle Disease</option>
                 <option value="Infectious laryngotracheitis (ILT)">Infectious laryngotracheitis (ILT)</option>
@@ -15,14 +16,14 @@
                 <option value="Marek’s Disease">Marek’s Disease</option>
                 <option value="Fowl cholera">Fowl cholera</option>
             </select>
-        </div>
-        <div class="list-group-item title-filter">Disease Summary</div>
-        <div class="list-group-item">
-            <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
-            <!-- <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas> -->
+            </div>
+            <div class="list-group-item title-filter">Disease Summary</div>
+            <div class="list-group-item">
+                <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-8">
-    <div id="map" style="width: 60vw !important;height: 70vh !important;"></div>
+    <div class="col-md-8">
+        <div id="map" style="width: 750px !important;height: 550px !important;"></div>
+    </div>
 </div>
