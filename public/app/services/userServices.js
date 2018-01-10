@@ -2,7 +2,7 @@ angular.module('userServices', [])
 
 .factory('User', function($http) {
     var userFactory = {}; // Create the userFactory object
-    var host = "http://127.0.0.1:3000";
+    var host = "http://172.104.161.220:3000";
     // Register users in database
     userFactory.create = function(regData) {
         var url = host + '/api/users';
@@ -63,35 +63,35 @@ angular.module('userServices', [])
 
     // Get the current user's permission
     userFactory.getPermission = function() {
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + '/api/permission/';
         return $http.get(url);
     };
 
     // Get all the users from database
     userFactory.getUsers = function() {
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + '/api/management/';
         return $http.get(url);
     };
 
     // Get user to then edit
     userFactory.getUser = function(id) {
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + '/api/edit/';
         return $http.get(url + id);
     };
 
     // Delete a user
     userFactory.deleteUser = function(username) {
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + '/api/management/';
         return $http.delete(url + username);
     };
 
     // Edit a user
     userFactory.editUser = function(id) {
-        var host = "http://127.0.0.1:3000";
+        var host = "http://172.104.161.220:3000";
         var url = host + '/api/edit';
         return $http.put(url, id);
     };

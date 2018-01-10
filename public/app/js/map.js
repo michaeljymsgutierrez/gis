@@ -10,7 +10,7 @@ function initMap() {
 
     function reInit() {
         $.ajax({
-            url: "http://127.0.0.1:3000/api/disease/all",
+            url: "http://172.104.161.220:3000/api/disease/all",
             method: "GET",
             headers: {
                 "x-access-token": window.localStorage.getItem('token')
@@ -72,7 +72,7 @@ function initMap() {
                     var ds = $(this).val();
                     var postdata = { disease: ds };
                     $.ajax({
-                        url: "http://127.0.0.1:3000/api/disease/query",
+                        url: "http://172.104.161.220:3000/api/disease/query",
                         method: "POST",
                         data: postdata,
                         headers: {
