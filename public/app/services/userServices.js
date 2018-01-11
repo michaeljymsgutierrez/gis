@@ -43,7 +43,9 @@ angular.module('userServices', [])
 
     // Send password reset link to user's e-mail
     userFactory.sendPassword = function(resetData) {
-        return $http.put('/api/resetpassword', resetData);
+        var host = "http://127.0.0.1:3000";
+        var url = host+ '/api/resetpassword';
+        return $http.put(url, resetData);
     };
 
     // Grab user's information from e-mail reset link
