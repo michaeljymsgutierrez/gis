@@ -36,12 +36,13 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     $scope.createUser = function() {
         var lat = jQuery('input#latitude').val();
         var long = jQuery('input#longitude').val();
+        var pa = jQuery('input#poultryaddress').val();
 
         var userData = {
             poultryname: $scope.formData.poultryname,
             poultryowner: $scope.formData.poultryowner,
             disease: $scope.formData.disease,
-            poultryaddress: $scope.formData.poultryaddress,
+            poultryaddress: pa,
             location: [long, lat]
         };
 

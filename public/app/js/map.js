@@ -1,10 +1,13 @@
 function initMap() {
-
+    var curLat = 13.764;
+    var curLong = 121.055;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             curLat = position.coords.latitude;
             curLong = position.coords.longitude;
             console.log(curLat + " " + curLong);
+        }, function(err) {
+            console.log(err);
         });
     }
 
