@@ -62,7 +62,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: Send Password Reset Link to User's E-mail
     .when('/resetpassword', {
-        templateUrl: 'app/views/pages/users/reset/password.html',
+        templateUrl: 'views/pages/users/reset/password.html',
         controller: 'passwordCtrl',
         controllerAs: 'password',
         authenticated: false
