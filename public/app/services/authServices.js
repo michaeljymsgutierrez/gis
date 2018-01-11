@@ -3,7 +3,7 @@ angular.module('authServices', [])
 // Factor: Auth handles all login/logout functions	
 .factory('Auth', function($http, AuthToken) {
     var authFactory = {}; // Create the factory object
-    var host = "http://172.104.161.220:3000";
+    var host = "http://45.56.73.235:3000";
     // Function to log the user in
     authFactory.login = function(loginData) {
         var url = host + '/api/authenticate';
