@@ -55,7 +55,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 $scope.formData.poultryowner = "";
                 $scope.formData.poultryaddress = "";
                 $scope.formData.disease = "";
-
+                window.location.reload();
             })
             .error(function(data) {
                 console.log('Error: ' + data);
