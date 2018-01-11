@@ -80,7 +80,7 @@ module.exports = function(router) {
                             console.log(user.email); // Display e-mail that it was sent to
                         }
                     });
-                    res.json({ success: true, message: 'Account registered! Please check your e-mail for activation link.' }); // Send success message back to controller/request
+                    res.json({ success: true, message: 'Account registered!' }); // Send success message back to controller/request
                 }
             });
         }
