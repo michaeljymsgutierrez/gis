@@ -2,7 +2,7 @@ angular.module('userServices', [])
 
 .factory('User', function($http) {
     var userFactory = {}; // Create the userFactory object
-    var host = "http://45.56.73.235:3000";
+    var host = "http://api.animal-surveillance.com:3000";
     // Register users in database
     userFactory.create = function(regData) {
         var url = host + '/api/users';
@@ -43,7 +43,7 @@ angular.module('userServices', [])
 
     // Send password reset link to user's e-mail
     userFactory.sendPassword = function(resetData) {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/resetpassword';
         return $http.put(url, resetData);
     };
@@ -65,35 +65,35 @@ angular.module('userServices', [])
 
     // Get the current user's permission
     userFactory.getPermission = function() {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/permission/';
         return $http.get(url);
     };
 
     // Get all the users from database
     userFactory.getUsers = function() {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/management/';
         return $http.get(url);
     };
 
     // Get user to then edit
     userFactory.getUser = function(id) {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/edit/';
         return $http.get(url + id);
     };
 
     // Delete a user
     userFactory.deleteUser = function(username) {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/management/';
         return $http.delete(url + username);
     };
 
     // Edit a user
     userFactory.editUser = function(id) {
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + '/api/edit';
         return $http.put(url, id);
     };

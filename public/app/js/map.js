@@ -13,7 +13,7 @@ function initMap() {
 
     function reInit() {
         $.ajax({
-            url: "http://45.56.73.235:3000/api/disease/all",
+            url: "http://api.animal-surveillance.com:3000/api/disease/all",
             method: "GET",
             headers: {
                 "x-access-token": window.localStorage.getItem('token')
@@ -75,7 +75,7 @@ function initMap() {
                     var ds = $(this).val();
                     var postdata = { disease: ds };
                     $.ajax({
-                        url: "http://45.56.73.235:3000/api/disease/query",
+                        url: "http://api.animal-surveillance.com:3000/api/disease/query",
                         method: "POST",
                         data: postdata,
                         headers: {

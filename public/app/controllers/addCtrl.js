@@ -10,7 +10,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     $scope.labels = ["New Castle Disease", "Infectious laryngotracheitis (ILT)", "Infectious bursal disease, IBD", "Infectious bronchitis", "Mycoplasma gallisepticum", "Infectious coryza", "Coccidiosis", "Marek’s Disease", "Fowl cholera"];
     $scope.data = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    var url = "http://45.56.73.235:3000/api/disease/summary";
+    var url = "http://api.animal-surveillance.com:3000/api/disease/summary";
     $http.get(url, {
         headers: { "x-access-token": window.localStorage.getItem('token') }
     }).then(function(res) {
@@ -46,7 +46,7 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
             location: [long, lat]
         };
 
-        var host = "http://45.56.73.235:3000";
+        var host = "http://api.animal-surveillance.com:3000";
         var url = host + "/api/disease";
 
         $http.post(url, userData)
