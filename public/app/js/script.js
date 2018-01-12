@@ -8,7 +8,7 @@
 var checkReceiveAlert = setInterval(function() {
     var pa = $('#poultryaddress');
     if (pa.length == 1) {
-        clearInterval(checkReceiveAlert);
+        // clearInterval(checkReceiveAlert);
         $(pa).geocomplete({ details: "form" });
     }
-}, 1000);
+}, 3000);
