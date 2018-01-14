@@ -54,7 +54,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: Send Username to E-mail
     .when('/resetusername', {
-        templateUrl: 'app/views/pages/users/reset/username.html',
+        templateUrl: 'views/pages/users/reset/username.html',
         controller: 'usernameCtrl',
         controllerAs: 'username',
         authenticated: false
