@@ -70,7 +70,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
 
     // Route: User Enter New Password & Confirm
     .when('/reset/:token', {
-        templateUrl: 'app/views/pages/users/reset/newpassword.html',
+        templateUrl: 'views/pages/users/reset/newpassword.html',
         controller: 'resetCtrl',
         controllerAs: 'reset',
         authenticated: false
