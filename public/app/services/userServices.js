@@ -51,7 +51,7 @@ angular.module('userServices', [])
     // Grab user's information from e-mail reset link
     userFactory.resetUser = function(token) {
         var host = "http://api.animal-surveillance.com:3000";
-        var url = host + '/api/resetpassword';
+        var url = host + '/api/resetpassword/';
         return $http.get(url + token);
     };
 

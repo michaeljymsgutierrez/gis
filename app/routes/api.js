@@ -10,8 +10,8 @@ module.exports = function(router) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: '',
-            pass: ''
+            user: 'madriel.gutierrez118@gmail.com',
+            pass: 'michaelle0508'
         }
     });
     // Route to register new users  
@@ -299,8 +299,8 @@ module.exports = function(router) {
                             from: 'Mail from animal Surveillance System, jeremyrbinuya@gmai.com',
                             to: user.email,
                             subject: 'Reset Password Request',
-                            text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://localhost:8080/reset/' + user.resettoken,
-                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://localhost:8080/reset/' + user.resettoken + '">http://localhost:8080/reset/</a>'
+                            text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://gis.dev.com/reset/' + user.resettoken,
+                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://gis.dev.com/reset/' + user.resettoken + '">http://gis.dev.com/reset/</a>'
                         };
 
                         transporter.sendMail(mailOptions, (error, info) => {
