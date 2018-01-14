@@ -38,7 +38,9 @@ angular.module('userServices', [])
 
     // Send user's username to e-mail
     userFactory.sendUsername = function(userData) {
-        return $http.get('/api/resetusername/' + userData);
+        var host = "http://api.animal-surveillance.com:3000";
+        var url = host + '/api/resetusername/';
+        return $http.get(url + userData);
     };
 
     // Send password reset link to user's e-mail
