@@ -1012,3 +1012,7 @@ END: LOADING ICON FOR LOGGING OUT USER
 .pchart {
     height: 300px;
 }
+
+#contact {
+    padding-top: 20px !important;
+}
