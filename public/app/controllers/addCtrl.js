@@ -1,5 +1,9 @@
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice) {
+    $scope.alert = {
+        success: false,
+        error: false,
+    };
 
     function initMap() {
         var curLat = 13.764;
@@ -182,9 +186,17 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
                 $scope.formData.poultryowner = "";
                 $scope.formData.poultryaddress = "";
                 $scope.formData.disease = "";
+                $scope.alert = {
+                    success: true,
+                    error: false,
+                };
             })
             .error(function(data) {
                 console.log('Error: ' + data);
+                $scope.alert = {
+                    success: false,
+                    error: true,
+                };
             });
     };
 });
